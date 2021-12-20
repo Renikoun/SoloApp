@@ -15,9 +15,9 @@ namespace SoloApp
         private BattleSpecialty Spec { get; set; }
         private MagicColor MagicColor { get; set; }
         private Race Race { get; set; }
-        private int PowerLevel { get; set; }
+        private byte PowerLevel { get; set; }
         //Конструктор
-        public Character(string name, EyeColor eyesColor, PlotRole role, BattleSpecialty battleSpec, MagicColor magicColor, Race race, Int16 powerN)
+        public Character(string name, EyeColor eyesColor, PlotRole role, BattleSpecialty battleSpec, MagicColor magicColor, Race race, byte powerN)
         {
             CharName = name;
             EyesColor = eyesColor;

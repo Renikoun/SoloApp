@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Collections.Generic;
 namespace SoloApp
 {
     class Program
@@ -6,7 +8,15 @@ namespace SoloApp
         static void Main(string[] args)
         {
             //Персонажи
-            Character rikkard = new Character("Rikkard Kronell", EyeColor.Brown, PlotRole.Protagonist, BattleSpecialty.Unique, MagicColor.SlightlyColored, Race.Human, 4);
+            Character rikkard = new Character(
+                "Rikkard Kronell",
+                EyeColor.Brown, 
+                PlotRole.Protagonist, 
+                BattleSpecialty.Unique, 
+                MagicColor.SlightlyColored, 
+                Race.Human, 
+                4
+                );
             Character veiland = new Character("Veiland Milten", EyeColor.Blue, PlotRole.Deuteragonist, BattleSpecialty.Knight, MagicColor.SoulColored, Race.Human, 8);
             Character dalara = new Character("Dalara Ala'Irei", EyeColor.Other, PlotRole.Deuteragonist, BattleSpecialty.Unique, MagicColor.SlightlyColored, Race.DemonElf, 7);
             Character kyle = new Character("Kyle", EyeColor.Blind, PlotRole.SideCharacter, BattleSpecialty.Mage, MagicColor.Classic, Race.DemonHuman, 7);
@@ -22,21 +32,21 @@ namespace SoloApp
             Character eri = new Character("Erika Starlight", EyeColor.Blue, PlotRole.SideCharacter, BattleSpecialty.Unique, MagicColor.SlightlyColored, Race.Human, 7);
             Character affyn = new Character("Affyn II", EyeColor.Black, PlotRole.SideCharacter, BattleSpecialty.Knight, MagicColor.MultiColored, Race.Human, 7);
             Character avelius = new Character("Avelius", EyeColor.Yellow, PlotRole.SideCharacter, BattleSpecialty.Unique, MagicColor.SoulColored, Race.Other, 11);
-            Character[] array = new Character[] { rikkard, veiland, dalara, kyle, fredericka, jaden, elsdeft, lira, raven, kord, dogma, olrik, aphyr, eri, affyn, avelius };
+            List<Character> list = new List<Character> {rikkard, veiland, dalara, kyle, fredericka, jaden, elsdeft, lira, raven, kord, dogma, olrik, aphyr, eri, affyn, avelius };
             Console.WriteLine("\nMethod - Print All Characters:\n");
-            for(int i = 0; i < array.Length; i++)
+            foreach (Character jj in list)
             {
-                array[i].PrintChar();
+                jj.PrintChar();
             }
             Console.WriteLine("\nMethod - Print All Humans:\n");
-            for (int i = 0; i < array.Length; i++)
-            {
-                array[i].PrintHumans();
+            foreach (Character jj in list)
+            {   
+                jj.PrintHumans();
             }
             Console.WriteLine("\nMethod - Print All Vampires:\n");
-            for (int i = 0; i < array.Length; i++)
+            foreach (Character jj in list)
             {
-                array[i].PrintVamps();
+                jj.PrintVamps();
             }
             Console.ReadKey();
         }
